@@ -38,7 +38,7 @@ class Actor(models.Model):
     popularity = models.FloatField()
     known_for_department = models.CharField(max_length=100)
     profile_path = models.CharField(max_length=200)
-    acting_movies = models.ManyToManyField(Movie, related_name='actor_in_movies')
+    acting_movies = models.ManyToManyField(Movie, related_name='actors_in_movie')
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_actors')
     
     def __str__(self):
@@ -50,7 +50,7 @@ class Director(models.Model):
     popularity = models.FloatField()
     known_for_department = models.CharField(max_length=100)
     profile_path = models.CharField(max_length=200)
-    directing_movies = models.ManyToManyField(Movie, related_name='director_in_movies')
+    directing_movies = models.ManyToManyField(Movie, related_name='director_in_movie')
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_directors')
 
 class Review(models.Model):

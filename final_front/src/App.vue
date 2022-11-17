@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <h3>MDDM</h3>
+      <router-link :to="{ name: 'movies' }">Movie</router-link> |
+      <router-link :to="{ name: 'articles' }">Article</router-link> |
+      <router-link :to="{ name: 'profile' }">Profile</router-link> | 
+      <router-link :to="{ name: 'login' }">Login</router-link> | 
+      <router-link :to="{ name: 'signup' }">SignUp</router-link>
     </nav>
     <router-view/>
   </div>
