@@ -31,10 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Django Apps
     'movies',
-    'rest_framework',
     'accounts',
     'community',
+    
+    'rest_framework',
+    
+    # CORS policy
+    
+    
     
     'django.contrib.admin',
     'django.contrib.auth',
