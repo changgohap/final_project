@@ -1,7 +1,12 @@
 <template>
-  <div class="border-here">
-    <h3>MovieList</h3>
-    <MovieListItem/>
+  <div class="container">
+    <section class="row">
+      <MovieListItem
+        v-for="movie in movies"
+        :key="movie.id"
+        :movie="movie"
+      />
+    </section>
   </div>
 </template>
 
@@ -12,6 +17,14 @@ export default {
   name: 'MovieList',
   components: {
     MovieListItem,
+  },
+  computed: {
+    movies() {
+      return this.$store.state.movies
+    }
+  },
+  created() {
+    this.$store.dispatch('getMovies')
   }
 }
 </script>
